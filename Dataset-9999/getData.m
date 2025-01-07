@@ -49,6 +49,12 @@ for i = 1:numRows
         % Assign the data to the structure field
         dataStruct(i).(varName) = dataTable{i, col};
     end
+
+    if ( dataStruct(i).Var3 ~= 8 )
+        dataStruct(i).Var12 = dataStruct(i).(dataTable.Properties.VariableNames{4+dataStruct(i).Var3});
+        dataStruct(i).(dataTable.Properties.VariableNames{4+dataStruct(i).Var3}) = "";
+    end
+
 end
 
 % Display the structure fields for verification
